@@ -14,10 +14,20 @@ boardconfig=YOUR BOARDCONFIG
 ecid=YOUR OWN ECID
 
 #changing dir..
+cd ~/Downloads
+
+#unzipping..
+unzip ~/Downloads/tsschecker-latest.zip
+
+#changing dir..
 cd ~/Desktop
 
+#turning tsschecker into a executable..
+if [ ! -e ~/Desktop/tsschecker-latest/tsschecker_macos ]; then
+    chmod +x tsschecker_macos
+
 #checking for tsschecker_macos..
-if [ ! -e ~/Desktop/tsschecker_macos ]; then
+if [ ! -e ~/Desktop/tsschecker-latest/tsschecker_macos ]; then
     echo "Tsschecker_macos Doesnt Exist!"
     echo"Move tsschecker to your desktop!"
 exit
