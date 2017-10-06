@@ -67,7 +67,7 @@ else
 fi
 
 #Downloading tsschecker..
-open -a Safari http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
+curl -0 http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
 
 #unzipping..
 unzip ~/Downloads/tsschecker-latest.zip
