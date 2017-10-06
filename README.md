@@ -1,6 +1,6 @@
 # BetterSaveThemBlobs
 
-# Installing
+# Setup
 
 * cd Desktop
 * git clone https://github.com/jst9n/BetterSaveThemBlobs.git
