@@ -1,0 +1,21 @@
+#!/bin/bash
+#BetterSaveThemBlobs By jst9n
+#Thanks @tihmstar for tsschecker_macos
+#Thanks to @iTrickzGG and @2klasic for the idea
+
+#plug your device info here!
+model=YOUR DEVICE MODEL echo"Ex. iPhone7,2"
+boardconfig=YOUR BOARDCONFIG
+ecid=YOUR OWN ECID
+
+#changing dir..
+cd ~/Desktop
+
+#checking for tsschecker_macos..
+if [ ! -e ~/Desktop/tsschecker_macos ]; then
+    echo "Tsschecker_macos Doesnt Exist!"
+    echo"Move tsschecker to your desktop!"
+exit
+fi
+#always saves latest baseband!
+./tsschecker_macos -d $model --boardconfig $boardconfig -l -e $ecid -s --save-path ~/Desktop
