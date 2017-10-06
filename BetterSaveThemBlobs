@@ -13,6 +13,9 @@ model=YOUR DEVICE MODEL (Example=iPhone7,2)
 boardconfig=YOUR BOARDCONFIG
 ecid=YOUR OWN ECID
 
+#Downloading tsschecker..
+run http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
+
 #changing dir..
 cd ~/Downloads
 
