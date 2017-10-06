@@ -9,7 +9,7 @@
 * libfragmentzip
 
 #Downloading tsschecker..
-run http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
+open -a Safari http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
 
 #changing dir..
 cd ~/Downloads
