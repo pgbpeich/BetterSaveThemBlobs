@@ -24,7 +24,7 @@ if [ ! -e ~/Desktop/tsschecker_macos ]; then
 #checking for tsschecker_macos..
 if [ ! -e ~/Desktop/tsschecker_macos ]; then
     echo "Tsschecker_macos Doesnt Exist!"
-    echo"Move tsschecker to your desktop!"
+    echo "Move tsschecker to your desktop!"
 exit
 fi
 
