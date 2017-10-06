@@ -15,14 +15,14 @@ open -a Safari http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
 unzip ~/Downloads/tsschecker-latest.zip
 
 #changing dir..
-cd ~/Downloads
+cd ~/Desktop
 
 #turning tsschecker into a executable..
-if [ ! -e ~/Users/"user"/Downloads/tsschecker_macos ]; then
+if [ ! -e ~/Desktop/tsschecker_macos ]; then
     chmod +x tsschecker_macos
 
 #checking for tsschecker_macos..
-if [ ! -e ~/Users/"user"/Downloads/tsschecker_macos ]; then
+if [ ! -e ~/Desktop/tsschecker_macos ]; then
     echo "Tsschecker_macos Doesnt Exist!"
     echo"Move tsschecker to your desktop!"
 exit
