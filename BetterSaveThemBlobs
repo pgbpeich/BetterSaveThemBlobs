@@ -3,6 +3,8 @@
 #Thanks @tihmstar for tsschecker_macos
 #Thanks to @iTrickzGG and @2klasic for the idea
 
+#You will need certain dependencies to run tsschecker_macos 
+
 #plug your device info here!
 model=YOUR DEVICE MODEL (Example=iPhone7,2)
 boardconfig=YOUR BOARDCONFIG
