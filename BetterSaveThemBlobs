@@ -59,21 +59,21 @@ elif [ "$e" = "2" ]
 				cd ~/Desktop
 				curl -O http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
 				unzip ./tsschecker-latest.zip
-				mkdir tsschecker-latest
-				mv {tsschecker*,*.pem,*.txt,LICENSE} tsschecker-latest
+				mkdir tsschecker/
+				mv {tsschecker*,*.pem,*.txt,LICENSE} tsschecker
 				#changing dir..
-				cd ~/Desktop/tsschecker-latest
+				cd ~/Desktop/tsschecker
 				chmod +x tsschecker*
 
 				#turning tsschecker into a executable..
-				if [ ! -e ~/Desktop/tsschecker_macos ]; then
+				if [ ! -e ~/Desktop/tsschecker/tsschecker_macos ]; then
 				    chmod +x tsschecker_macos
 fi
 
 
 
 #checking for tsschecker_macos..
-if [ ! -e ~/Desktop/tsschecker_macos ]; then
+if [ ! -e ~/Desktop/tsschecker/tsschecker_macos ]; then
     echo "Tsschecker_macos Doesnt Exist, Move tsschecker_macos to your desktop!"
 
 exit
@@ -81,7 +81,7 @@ fi
 
 #plug your device info here!
 
-echo "model=YOUR DEVICE MODEL (Example=iPhone7,2)"
+echo "model=YOUR DEVICE MODEL"
 read model
 
 echo "boardconfig=YOUR BOARDCONFIG"
