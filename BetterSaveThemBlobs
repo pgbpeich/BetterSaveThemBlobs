@@ -17,10 +17,10 @@ echo "======================================="
 read e
 if [ "$e" = "1" ]
 	then
-	 #Ask for the administrator password upfront.
+	 # Ask for the administrator password upfront.
         sudo -v
 
-        #Keep-alive: update existing `sudo` time stamp until the script has finished.
+        # Keep-alive: update existing `sudo` time stamp until the script has finished.
         while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -55,29 +55,22 @@ elif [ "$e" = "2" ]
 
         # Keep-alive: update existing `sudo` time stamp until the script has finished.
         while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+				#Downloading tsschecker..
+				cd ~/Desktop
+				curl -O http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
+				unzip ./tsschecker-latest.zip
+				mkdir tsschecker-latest
+				mv {tsschecker*,*.pem,*.txt,LICENSE} tsschecker-latest
+				#changing dir..
+				cd ~/Desktop/tsschecker-latest
+				chmod +x tsschecker*
 
-killall Finder
-killall Terminal
-
-else
-
-
-	killall Terminal
-
+				#turning tsschecker into a executable..
+				if [ ! -e ~/Desktop/tsschecker_macos ]; then
+				    chmod +x tsschecker_macos
 fi
 
-#Downloading tsschecker..
-curl -0 http://api.tihmstar.net/builds/tsschecker/tsschecker-latest.zip
 
-#unzipping..
-unzip ~/Downloads/tsschecker-latest.zip
-
-#changing dir..
-cd ~/Desktop
-
-#turning tsschecker into a executable..
-if [ ! -e ~/Desktop/tsschecker_macos ]; then
-    chmod +x tsschecker_macos
 
 #checking for tsschecker_macos..
 if [ ! -e ~/Desktop/tsschecker_macos ]; then
@@ -87,12 +80,17 @@ exit
 fi
 
 #plug your device info here!
-model=YOUR DEVICE MODEL (Example=iPhone7,2)
-boardconfig=YOUR BOARDCONFIG
-ecid=YOUR OWN ECID
+
+echo "model=YOUR DEVICE MODEL (Example=iPhone7,2)"
+read model
+
+echo "boardconfig=YOUR BOARDCONFIG"
+read board
+echo "ecid=YOUR OWN ECID"
+read ecid 
 
 #always saves latest baseband!
-./tsschecker_macos -d $model --boardconfig $boardconfig -l -e $ecid -s --save-path ~/Desktop
+./tsschecker_macos -d "$model" --boardconfig "$board" -l -e "$ecid"2 -s --save-path ~/Desktop
 
 elif [ "$e" = "3" ]
 		then
